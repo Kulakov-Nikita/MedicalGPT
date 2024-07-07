@@ -1,0 +1,175 @@
+﻿import aspose.words
+import aspose.pydrawing
+import datetime
+import decimal
+import io
+import uuid
+from typing import Iterable, List
+from enum import Enum
+
+class Forms2OleControl(aspose.words.drawing.ole.OleControl):
+    """Represents Microsoft Forms 2.0 OLE control.
+    To learn more, visit the `Working with Ole Objects <https://docs.aspose.com/words/python-net/working-with-ole-objects/>` documentation article."""
+    
+    def as_text_box_control(self) -> aspose.words.drawing.ole.TextBoxControl:
+        """Casts Forms2OleControl to :class:`TextBoxControl`, otherwise returns null."""
+        ...
+    
+    @property
+    def caption(self) -> str:
+        """Gets Caption property of control. Default value is an empty string."""
+        ...
+    
+    @property
+    def value(self) -> str:
+        """Gets underlying Value property which often represents control state.
+        For example checked option button has '1' value while unchecked has '0'.
+        Default value is an empty string."""
+        ...
+    
+    @property
+    def enabled(self) -> bool:
+        """Returns ``True`` if control is in enabled state."""
+        ...
+    
+    @property
+    def child_nodes(self) -> aspose.words.drawing.ole.Forms2OleControlCollection:
+        """Gets collection of immediate child controls.
+        
+        Returns ``None`` if this control can not have children."""
+        ...
+    
+    @property
+    def type(self) -> aspose.words.drawing.ole.Forms2OleControlType:
+        """Gets type of Forms 2.0 control."""
+        ...
+    
+    @property
+    def group_name(self) -> str:
+        """Gets or sets a string that specifies a group of mutually exclusive controls.
+        The default value is an empty string."""
+        ...
+    
+    @group_name.setter
+    def group_name(self, value: str):
+        ...
+    
+    ...
+
+class Forms2OleControlCollection:
+    """Represents collection of :class:`Forms2OleControl` objects.
+    To learn more, visit the `Working with Ole Objects <https://docs.aspose.com/words/python-net/working-with-ole-objects/>` documentation article."""
+    
+    def __init__(self):
+        ...
+    
+    def __getitem__(self, index: int) -> aspose.words.drawing.ole.Forms2OleControl:
+        """Gets :class:`Forms2OleControl` object at a specified index."""
+        ...
+    
+    @property
+    def count(self) -> int:
+        """Gets count of objects in the collection."""
+        ...
+    
+    ...
+
+class MorphDataControl(aspose.words.drawing.ole.Forms2OleControl):
+    """The MorphDataControl structure is an aggregate of six controls: CheckBox, ComboBox, ListBox, OptionButton, TextBox, and ToggleButton."""
+    
+    ...
+
+class OleControl:
+    """Represents OLE ActiveX control.
+    To learn more, visit the `Working with Ole Objects <https://docs.aspose.com/words/python-net/working-with-ole-objects/>` documentation article."""
+    
+    def as_forms2_ole_control(self) -> aspose.words.drawing.ole.Forms2OleControl:
+        ...
+    
+    def as_text_box_control(self) -> aspose.words.drawing.ole.TextBoxControl:
+        ...
+    
+    @property
+    def name(self) -> str:
+        """Gets or sets name of the ActiveX control."""
+        ...
+    
+    @name.setter
+    def name(self, value: str):
+        ...
+    
+    @property
+    def is_forms2_ole_control(self) -> bool:
+        """Returns ``True`` if the control is a :class:`Forms2OleControl`."""
+        ...
+    
+    ...
+
+class TextBoxControl(aspose.words.drawing.ole.MorphDataControl):
+    """The TextBox control displays text from an organized set of data or user input."""
+    
+    @property
+    def type(self) -> aspose.words.drawing.ole.Forms2OleControlType:
+        """Gets type of Forms 2.0 control."""
+        ...
+    
+    @property
+    def text(self) -> str:
+        """Gets or sets a text of the control."""
+        ...
+    
+    @text.setter
+    def text(self, value: str):
+        ...
+    
+    ...
+
+class Forms2OleControlType(Enum):
+    """Enumerates types of Forms 2.0 controls."""
+    
+    """A radio button control."""
+    OPTION_BUTTON: int
+    
+    """A control that displays text."""
+    LABEL: int
+    
+    """A control that allows the user to enter text."""
+    TEXTBOX: int
+    
+    """A control that allows the user to select or deselect an option."""
+    CHECK_BOX: int
+    
+    """A control that allows the user to toggle between two states."""
+    TOGGLE_BUTTON: int
+    
+    """A control that allows the user to increase or decrease a value."""
+    SPIN_BUTTON: int
+    
+    """A control that allows the user to select an item from a list."""
+    COMBO_BOX: int
+    
+    """A control that groups other controls."""
+    FRAME: int
+    
+    """A control that displays multiple pages of content."""
+    MULTI_PAGE: int
+    
+    """A control that allows the user to switch between multiple pages of content."""
+    TAB_STRIP: int
+    
+    """A button that triggers an action when clicked."""
+    COMMAND_BUTTON: int
+    
+    """A control that displays an image."""
+    IMAGE: int
+    
+    """A control that allows the user to scroll through content."""
+    SCROLL_BAR: int
+    
+    """A container for other controls."""
+    FORM: int
+    
+    """A control that displays a list of items."""
+    LIST_BOX: int
+    
+
